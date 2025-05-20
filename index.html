@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DiFlow - Expertos en implementación BIM. Modelado 3D, coordinación multidisciplinar y automatización de procesos con Revit y Autodesk Construction Cloud">
+  <title>DiFlow · Soluciones BIM Integrales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta property="og:image" content="img/og-image.jpg">
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    :root {
+      --primary-color: #2ea3a3;
+      --secondary-color: #1f7a7a;
+      --text-dark: #333;
+      --transition-speed: 0.3s;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/Fondo1.png') center/cover;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      padding: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content img {
+      width: 150px;
+      margin-bottom: 2rem;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .cta-container {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    /* Botones */
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: all var(--transition-speed) ease;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: white;
+      color: white;
+    }
+
+    /* Sección Servicios */
+    #features {
+      padding: 5rem 1rem;
+      background: #f8f9fa;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform var(--transition-speed) ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+
+    /* Sobre Nosotros */
+    #about {
+      padding: 5rem 1rem;
+      display: flex;
+      align-items: center;
+      min-height: 600px;
+      background: url('img/about-bg.jpg') center/cover;
+      color: white;
+      position: relative;
+    }
+
+    #about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .about-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    /* Formulario de Contacto */
+    #contact {
+      padding: 5rem 1rem;
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--text-dark);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .social-links a {
+      opacity: 0.8;
+      transition: opacity var(--transition-speed) ease;
+    }
+
+    .social-links a:hover {
+      opacity: 1;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <nav aria-label="Navegación principal">
+      <!-- Agregar menú de navegación aquí -->
+    </nav>
+    
+    <div class="hero-content">
+      <img src="img/DiFlow_Isotipo_1920x1920_W.png" alt="Logo DiFlow" loading="lazy">
+      <h1>Transformando Proyectos con BIM</h1>
+      <p class="lead-text">Soluciones tecnológicas para la industria AEC</p>
+      
+      <div class="cta-container">
+        <a href="#contact" class="btn btn-primary">Contacto</a>
+        <a href="#features" class="btn btn-secondary">Servicios</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="features" aria-labelledby="servicios-titulo">
+      <h2 id="servicios-titulo" class="section-title">Nuestros Servicios BIM</h2>
+      
+      <div class="services-grid">
+        <article class="service-card">
+          <img src="img/modelado-3d.svg" alt="Modelado 3D" class="service-icon">
+          <h3>Modelado 3D Multidisciplinar</h3>
+          <p>Desarrollo de modelos BIM precisos para arquitectura, estructuras e instalaciones.</p>
+          <a href="#" class="btn-link">Más información</a>
+        </article>
+
+        <article class="service-card">
+          <img src="img/coordinacion.svg" alt="Coordinación" class="service-icon">
+          <h3>Coordinación de Proyectos</h3>
+          <p>Detección y resolución de conflictos mediante clash detection avanzado.</p>
+          <a href="#" class="btn-link">Casos de éxito</a>
+        </article>
+
+        <article class="service-card">
+          <img src="img/automatizacion.svg" alt="Automatización" class="service-icon">
+          <h3>Automatización de Procesos</h3>
+          <p>Desarrollo de herramientas personalizadas para Revit y Dynamo.</p>
+          <a href="#" class="btn-link">Ver ejemplos</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="section-title">Expertos en Implementación BIM</h2>
+          <p>15 años transformando proyectos de arquitectura e ingeniería mediante metodologías BIM.</p>
+          <ul class="about-list">
+            <li>✔️ Certificados Autodesk</li>
+            <li>✔️ +200 proyectos completados</li>
+            <li>✔️ Soporte 24/7</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contacto-titulo">
+      <h2 id="contacto-titulo" class="section-title">Contacto Rápido</h2>
+      
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="nombre">Nombre Completo:</label>
+          <input type="text" id="nombre" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" rows="5" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+      </form>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <img src="img/DiFlow_Isotipo_1920x1920_W.png" alt="Logo DiFlow" width="120">
+      
+      <div class="social-links">
+        <a href="www.linkedin.com/in/axel-oropeza" 
+           aria-label="LinkedIn"><img 
+           src="img/linkedin_W.png" 
+           alt="LinkedIn" 
+           width="30"></a>
+        <a href="https://www.instagram.com/diflowmanagement/#" 
+           aria-label="Instagram"><img 
+           src="img/instagram_W.png" 
+           alt="Instagram" width="30"></a>
+        <a href="#" 
+           aria-label="Facebook"><img 
+           src="img/facebook_W.png" 
+           alt="YouTube" 
+           width="30"></a>
+      </div>
+      
+      <p>&copy; 2024 DiFlow. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Validación de formulario
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      const response = await fetch('/endpoint', {
+        method: 'POST',
+        body: formData
+      });
+      
+      if(response.ok) {
+        alert('Mensaje enviado correctamente');
+        e.target.reset();
+      } else {
+        alert('Error al enviar el mensaje');
+      }
+    });
+
+    // Animación al hacer scroll
+    window.addEventListener('scroll', () => {
+      const cards = document.querySelectorAll('.service-card');
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if(cardTop < window.innerHeight * 0.8) {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }
+      });
+    });
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "DiFlow",
+      "image": "img/logo.jpg",
+      "description": "Especialistas en implementación BIM para proyectos de construcción",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad",
+        "addressCountry": "País"
+      }
+    }
+  </script>
+</body>
+</html>
