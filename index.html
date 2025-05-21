@@ -5,11 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="DiFlow - Expertos en implementación BIM. Modelado 3D, coordinación multidisciplinar y automatización de procesos con Revit y Autodesk Construction Cloud">
   <title>DiFlow · Soluciones BIM Integrales</title>
+  <meta property="og:image" content="img/og-image.jpg">
+  
+  <!-- Preconexión y precarga de recursos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <meta property="og:image" content="img/og-image.jpg">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" href="styles.css" as="style">
   
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Contenido de tu sitio web -->
+  
+  <!-- Scripts al final del body -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    // Inicialización de EmailJS
+    (function() {
+      emailjs.init('wDNNgwyGYGJxjWlWU'); // User ID
+    })();
+  </script>
+  <script src="app.js" defer></script>
+
   <style>
     :root {
       --primary-color: #2ea3a3;
@@ -295,18 +313,18 @@
       
       <form class="contact-form" id="contactForm">
         <div class="form-group">
-          <label for="nombre">Nombre Completo:</label>
-          <input type="text" id="nombre" required>
+          <label for="name">Nombre Completo:</label>
+          <input type="text" id="name" name="name" required>
         </div>
         
         <div class="form-group">
           <label for="email">Correo Electrónico:</label>
-          <input type="email" id="email" required>
+          <input type="email" id="email" name="email" required>
         </div>
         
         <div class="form-group">
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" rows="5" required></textarea>
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
         </div>
         
         <button type="submit" class="btn btn-primary">Enviar Consulta</button>
@@ -316,10 +334,10 @@
 
   <footer role="contentinfo">
     <div class="footer-content">
-      <img src="img/DiFlow_Isotipo_1920x1920_W.png" alt="Logo DiFlow" width="120">
+      <img src="img/DiFlow_Imagotipo_1920x1920_W.png" alt="Logo DiFlow" width="120">
       
       <div class="social-links">
-        <a href="www.linkedin.com/in/axel-oropeza" 
+        <a href="https://www.linkedin.com/in/axel-oropeza/" 
            aria-label="LinkedIn"><img 
            src="img/linkedin_W.png" 
            alt="LinkedIn" 
@@ -328,62 +346,35 @@
            aria-label="Instagram"><img 
            src="img/instagram_W.png" 
            alt="Instagram" width="30"></a>
-        <a href="#" 
+        <a href="https://www.facebook.com/Axel.Oropeza40/" 
            aria-label="Facebook"><img 
            src="img/facebook_W.png" 
-           alt="YouTube" 
+           alt="Facebook" 
            width="30"></a>
       </div>
       
       <p>&copy; 2024 DiFlow. Todos los derechos reservados.</p>
     </div>
   </footer>
-
-  <script>
-    // Validación de formulario
-    document.getElementById('contactForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const formData = new FormData(e.target);
-      const response = await fetch('/endpoint', {
-        method: 'POST',
-        body: formData
-      });
-      
-      if(response.ok) {
-        alert('Mensaje enviado correctamente');
-        e.target.reset();
-      } else {
-        alert('Error al enviar el mensaje');
-      }
-    });
-
-    // Animación al hacer scroll
-    window.addEventListener('scroll', () => {
-      const cards = document.querySelectorAll('.service-card');
-      cards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
-        if(cardTop < window.innerHeight * 0.8) {
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "serviceType": "Servicios BIM",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Modelado 3D Multidisciplinar"
         }
-      });
-    });
-  </script>
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "DiFlow",
-      "image": "img/logo.jpg",
-      "description": "Especialistas en implementación BIM para proyectos de construcción",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ciudad",
-        "addressCountry": "País"
       }
-    }
-  </script>
+    ]
+  }
+}
+</script>
 </body>
 </html>
