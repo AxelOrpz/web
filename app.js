@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const emailConfig = {
     serviceID: 'service_jss790u',
     templateID: 'template_8e3quit',
-    toEmail: 'aaxeloropeza@gmail.com'
+    toEmail: 'aaxeloropeza@gmail.com',
+    user_id: 'wDNNgwyGYGJxjWlWU' 
   };
 
   // Elementos del DOM

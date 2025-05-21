@@ -10,10 +10,16 @@
   <!-- Preconexión y precarga de recursos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="style.css" as="style">
   
+    <!-- Favicon estándar -->
+  <link rel="icon" type="image/png" href="img/DiFlow_Isotipo_120x120.png">
+
+  <!-- Versión para Apple/Safari -->
+  <link rel="apple-touch-icon" href="img/DiFlow_Isotipo_120x120.png">
+
   <!-- Estilos principales -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Contenido de tu sitio web -->
@@ -85,31 +91,6 @@
       gap: 1rem;
       justify-content: center;
       margin-top: 2rem;
-    }
-
-    /* Botones */
-    .btn {
-      padding: 1rem 2rem;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: all var(--transition-speed) ease;
-      border: 2px solid transparent;
-    }
-
-    .btn-primary {
-      background: var(--primary-color);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--secondary-color);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      border-color: white;
-      color: white;
     }
 
     /* Sección Servicios */
@@ -267,46 +248,137 @@
   </header>
 
   <main>
-    <section id="features" aria-labelledby="servicios-titulo">
-      <h2 id="servicios-titulo" class="section-title">Nuestros Servicios BIM</h2>
-      
-      <div class="services-grid">
-        <article class="service-card">
-          <img src="img/modelado-3d.svg" alt="Modelado 3D" class="service-icon">
-          <h3>Modelado 3D Multidisciplinar</h3>
-          <p>Desarrollo de modelos BIM precisos para arquitectura, estructuras e instalaciones.</p>
-          <a href="#" class="btn-link">Más información</a>
-        </article>
+<section id="features" class="services" aria-labelledby="servicios-titulo">
+  <div class="services-header">
+    <h2 id="servicios-titulo" class="section-title">Nuestros Servicios BIM</h2>
+    <p class="services-subtitle">Soluciones integrales para optimizar tu proceso de diseño y construcción</p>
+  </div>
 
-        <article class="service-card">
-          <img src="img/coordinacion.svg" alt="Coordinación" class="service-icon">
-          <h3>Coordinación de Proyectos</h3>
-          <p>Detección y resolución de conflictos mediante clash detection avanzado.</p>
-          <a href="#" class="btn-link">Casos de éxito</a>
-        </article>
-
-        <article class="service-card">
-          <img src="img/automatizacion.svg" alt="Automatización" class="service-icon">
-          <h3>Automatización de Procesos</h3>
-          <p>Desarrollo de herramientas personalizadas para Revit y Dynamo.</p>
-          <a href="#" class="btn-link">Ver ejemplos</a>
-        </article>
+  <div class="services-grid">
+    <!-- Modelado 3D Multidisciplinar -->
+    <article class="service-card" data-bg-choices="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80,https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80">
+      <div class="service-bg"></div>
+      <div class="service-icon-wrapper">
+        <img src="img/3d-view.png" alt="Modelado 3D" class="service-icon">
       </div>
-    </section>
+      <div class="service-content">
+        <h3>Modelado 3D Multidisciplinar</h3>
+        <p>Desarrollo de modelos BIM precisos para arquitectura, estructuras e instalaciones.</p>
+        <a href="#" class="btn-link">Más información</a>
+      </div>
+    </article>
+    <!-- Renderizado Fotorrealista -->
+    <article class="service-card" data-bg-choices="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1920,https://images.pexels.com/photos/373965/pexels-photo-373965.jpeg?auto=compress&cs=tinysrgb&w=1920">
+      <div class="service-bg"></div>
+      <div class="service-icon-wrapper">
+        <img src="img/3d.png" alt="Renderizado" class="service-icon">
+      </div>
+      <div class="service-content">
+        <h3>Renderizado Fotorrealista</h3>
+        <p>Visualizaciones arquitectónicas de alta calidad con iluminación realista y entornos virtuales.</p>
+        <a href="#" class="btn-link">Ver ejemplos</a>
+      </div>
+    </article>
+    <!-- Animaciones 4D -->
+    <article class="service-card" data-bg-choices="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80,https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80">
+      <div class="service-bg"></div>
+      <div class="service-icon-wrapper">
+        <img src="img/motion-graphics.png" alt="Animación 4D" class="service-icon">
+      </div>
+      <div class="service-content">
+        <h3>Animaciones 4D</h3>
+        <p>Simulaciones temporales de construcción con integración de cronogramas y gestión de recursos.</p>
+        <a href="#" class="btn-link">Ver demostración</a>
+      </div>
+    </article>
+    <!-- Automatización de Procesos -->
+    <article class="service-card" data-bg-choices="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80,https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80">
+      <div class="service-bg"></div>
+      <div class="service-icon-wrapper">
+        <img src="img/automation.png" alt="Automatización BIM" class="service-icon">
+      </div>
+      <div class="service-content">
+        <h3>Automatización de Procesos</h3>
+        <p>Desarrollo de herramientas personalizadas para Revit utilizando Dynamo y C#.</p>
+        <a href="#automatizacion" class="btn-link">Ver casos de éxito</a>
+      </div>
+    </article>
+    <!-- Business Intelligence Avanzado -->
+    <article class="service-card" data-bg-choices="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80,https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80">
+      <div class="service-bg"></div>
+      <div class="service-icon-wrapper">
+        <img src="img/financial-technology.png" alt="Power BI" class="service-icon">
+      </div>
+      <div class="service-content">
+        <h3>Business Intelligence Avanzado</h3>
+        <p>Transformación de datos en insights accionables con dashboards interactivos.</p>
+        <a href="#powerbi-demo" class="btn-link">Ver demostración</a>
+      </div>
+    </article>
+  </div>
+</section>
 
-    <section id="about">
-      <div class="about-content">
-        <div class="about-text">
-          <h2 class="section-title">Expertos en Implementación BIM</h2>
-          <p>15 años transformando proyectos de arquitectura e ingeniería mediante metodologías BIM.</p>
-          <ul class="about-list">
-            <li>✔️ Certificados Autodesk</li>
-            <li>✔️ +200 proyectos completados</li>
-            <li>✔️ Soporte 24/7</li>
-          </ul>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.service-card').forEach(card => {
+      const div = card.querySelector('.service-bg');
+      const choices = card.dataset.bgChoices.split(',');
+      const randomUrl = choices[Math.floor(Math.random() * choices.length)];
+      div.style.backgroundImage = `url('${randomUrl}')`;
+    });
+  });
+</script>
+
+<section id="about" class="about" aria-labelledby="expertos-titulo">
+  <div class="about-overlay"></div>
+  <div class="container about-content">
+    <div class="about-header">
+      <h2 id="expertos-titulo" class="section-title">
+        <span class="title-decorator"></span>Expertos en Implementación BIM
+      </h2>
+      <p class="about-lead">Transformando la industria AEC desde hace 15 años con soluciones BIM integrales</p>
+    </div>
+
+    <ul class="about-list" aria-label="Ventajas de nuestro servicio BIM">
+      <li class="about-item">
+        <div class="item-container">
+          <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+          <div class="item-content">
+            <h3 class="item-title">Certificación Profesional</h3>
+            <p class="item-text">Autodesk Certified Professionals</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </li>
+      
+      <li class="about-item">
+        <div class="item-container">
+          <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+          <div class="item-content">
+            <h3 class="item-title">Experiencia Comprobada</h3>
+            <p class="item-text">+200 proyectos BIM exitosos</p>
+          </div>
+        </div>
+      </li>
+      
+      <li class="about-item">
+        <div class="item-container">
+          <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+          <div class="item-content">
+            <h3 class="item-title">Soporte Integral</h3>
+            <p class="item-text">Asistencia técnica 24/7/365</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
 
     <section id="contact" aria-labelledby="contacto-titulo">
       <h2 id="contacto-titulo" class="section-title">Contacto Rápido</h2>
@@ -327,7 +399,8 @@
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
         
-        <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+        <button type="submit" class="btn btn-tertiary">Enviar Consulta</button>
+        
       </form>
     </section>
   </main>
