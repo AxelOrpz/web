@@ -56,9 +56,7 @@ const addInDetails = {
     coverImage: 'img/UnHideElements.png', // Ruta del icono local
     images: [], // Puedes añadir imágenes específicas del add-in aquí si las tienes
     videoUrl: 'https://www.youtube.com/embed/rYMbl6T7S-0', // URL de incrustación de YouTube
-    isFree: true, // Nuevo: Indica que es gratuito
-    // Agrega una propiedad para indicar un enlace directo a una nueva página
-    directLink: 'UnHideElements.html' // AÑADE ESTA LÍNEA
+    isFree: true // Nuevo: Indica que es gratuito
   },
   otroaddin: {
     id: 'otroaddin',
@@ -127,8 +125,7 @@ const serviceDetails = {
       'https://placehold.co/400x300/1f7a7a/ffffff?text=Proyecto+2',
       'https://placehold.co/400x300/2ea3a3/ffffff?text=Proyecto+3',
       'https://placehold.co/400x300/1f7a7a/ffffff?text=Proyecto+4'
-    ],
-    directLink: 'RenderizadoFotorrealista.html' // AÑADE ESTA LÍNEA
+    ]
   },
   animaciones4D: {
     title: 'Animaciones 4D',
@@ -429,13 +426,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         addInCover.addEventListener('click', () => {
-          if (addIn.directLink) { // VERIFICA LA PROPIEDAD directLink
-            window.location.href = addIn.directLink; // REDIRIGE A LA NUEVA PÁGINA
-          } else {
-            populateExpandedDetail(addIn); // Pasar el objeto add-in completo
-            hidePanel(domElements.automationRibbonPanel); // Ocultar la cinta
-            showPanel(domElements.serviceExpandedDetail); // Mostrar el detalle del add-in
-          }
+          populateExpandedDetail(addIn); // Pasar el objeto add-in completo
+          hidePanel(domElements.automationRibbonPanel); // Ocultar la cinta
+          showPanel(domElements.serviceExpandedDetail); // Mostrar el detalle del add-in
         });
 
         domElements.addInRibbonContainer.appendChild(addInCover);
@@ -466,10 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hidePanel(domElements.serviceExpandedDetail);
       hidePanel(domElements.automationRibbonPanel);
 
-      // AÑADE ESTA LÓGICA PARA MANEJAR directLink
-      if (serviceDetails[serviceId] && serviceDetails[serviceId].directLink) {
-          window.location.href = serviceDetails[serviceId].directLink;
-      } else if (serviceId === 'automatizacion-ribbon') {
+      if (serviceId === 'automatizacion-ribbon') {
         // Si es el botón de automatización, mostrar la cinta de add-ins
         showPanel(domElements.automationRibbonPanel);
       } else {

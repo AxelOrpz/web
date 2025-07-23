@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería de renders fotorrealistas de DiFlow. Visualizaciones arquitectónicas de alta calidad.">
+  <title>Galería de Renders - DiFlow</title>
+  
+  <!-- Preconexión y precarga de recursos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Estilos principales heredados o básicos -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Evita el scroll horizontal */
+      background-color: #000; /* Fondo oscuro para que las imágenes resalten */
+      font-family: 'Arial', sans-serif; /* Consistencia con tu style.css */
+    }
+
+    .gallery-fullscreen-container {
+      position: relative; /* Para posicionar el botón de cerrar */
+      width: 100vw;
+      min-height: 100vh; /* Asegura que ocupe al menos la altura de la ventana */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px; /* Pequeño padding para los bordes */
+      box-sizing: border-box; /* Incluye padding en el ancho/alto */
+    }
+
+    .close-button {
+      position: fixed; /* Fijo en la pantalla */
+      top: 20px;
+      right: 30px;
+      font-size: 3.5rem; /* Tamaño grande para la X */
+      color: #fff; /* Color blanco para la X */
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+      line-height: 1; /* Asegura que la X esté bien centrada verticalmente */
+      z-index: 1000; /* Asegura que esté por encima de las imágenes */
+      text-shadow: 0 0 10px rgba(0,0,0,0.5); /* Sombra para visibilidad */
+    }
+
+    .close-button:hover {
+      color: var(--primary-color); /* Color al pasar el ratón */
+      transform: scale(1.1);
+    }
+
+    .image-grid {
+      display: grid;
+      /* Ajusta las columnas para que las imágenes sean grandes y responsivas */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 15px; /* Espacio entre imágenes */
+      width: 100%;
+      max-width: 1600px; /* Límite para que no sean excesivamente grandes en pantallas muy anchas */
+      margin: auto; /* Centra la cuadrícula */
+    }
+
+    .grid-item {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra más pronunciada */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #222; /* Fondo para evitar flashes blancos al cargar */
+      display: flex; /* Para centrar la imagen si no ocupa todo el espacio */
+      align-items: center;
+      justify-content: center;
+    }
+
+    .grid-item:hover {
+      transform: translateY(-8px) scale(1.02); /* Efecto más pronunciado al pasar el ratón */
+      box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 300px; /* Altura fija para las imágenes del collage en desktop */
+      object-fit: cover; /* Recorta la imagen para cubrir el área */
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .grid-item:hover img {
+      transform: scale(1.08); /* Efecto de zoom al pasar el ratón */
+    }
+
+    /* Responsive para la galería */
+    @media (max-width: 1024px) {
+        .image-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        .grid-item img {
+            height: 250px;
+        }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-fullscreen-container {
+        padding: 15px;
+      }
+      .close-button {
+        font-size: 3rem;
+        top: 15px;
+        right: 20px;
+      }
+      .image-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        gap: 10px;
+      }
+      .grid-item img {
+        height: 220px; /* Ajusta altura para móviles */
+      }
+    }
+
+    @media (max-width: 480px) {
+        .close-button {
+            font-size: 2.5rem;
+            top: 10px;
+            right: 15px;
+        }
+        .grid-item img {
+            height: 180px;
+        }
+    }
+
+    /* Ocultar el footer en esta página si está presente */
+    footer {
+        display: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="gallery-fullscreen-container">
+      <a href="index.html" class="close-button" aria-label="Cerrar galería">&times;</a>
+      
+      <div class="image-grid">
+        <!-- Reemplaza estas rutas con las de tus imágenes reales en img/renders/ -->
+        <div class="grid-item">
+          <img src="img/renders/render-moderna.jpg" onerror="this.src='https://placehold.co/1920x1080/2ea3a3/ffffff?text=Render+1'" alt="Render de Residencia Moderna">
+        </div>
+        
+        <div class="grid-item">
+          <img src="img/renders/render-oficina.jpg" onerror="this.src='https://placehold.co/1920x1080/1f7a7a/ffffff?text=Render+2'" alt="Render de Interior de Oficina">
+        </div>
+
+        <div class="grid-item">
+          <img src="img/renders/render-comercial.jpg" onerror="this.src='https://placehold.co/1920x1080/2ea3a3/ffffff?text=Render+3'" alt="Render de Espacio Comercial">
+        </div>
+
+        <div class="grid-item">
+          <img src="img/renders/render-fachada.jpg" onerror="this.src='https://placehold.co/1920x1080/1f7a7a/ffffff?text=Render+4'" alt="Render de Fachada Detallada">
+        </div>
+
+        <div class="grid-item">
+          <img src="img/renders/render-paisajismo.jpg" onerror="this.src='https://placehold.co/1920x1080/2ea3a3/ffffff?text=Render+5'" alt="Render de Paisajismo y Entorno">
+        </div>
+        
+        <div class="grid-item">
+          <img src="img/renders/render-interiores.jpg" onerror="this.src='https://placehold.co/1920x1080/1f7a7a/ffffff?text=Render+6'" alt="Render de Diseño de Interiores">
+        </div>
+
+        <!-- Añade más <div class="grid-item"> con tus imágenes aquí -->
+
+      </div>
+    </div>
+  </main>
+</body>
+</html>
