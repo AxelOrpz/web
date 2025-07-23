@@ -34,6 +34,7 @@
   </script>
   <script src="app.js" defer></script>
 
+  <!-- Estilos internos (pueden moverse a style.css si se prefiere) -->
   <style>
     :root {
       --primary-color: #2ea3a3;
@@ -43,7 +44,7 @@
     }
 
     * {
-      margin: 0;
+      margin: 0px;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
@@ -53,6 +54,7 @@
       font-family: 'Arial', sans-serif;
       line-height: 1.6;
       color: var(--text-dark);
+      overflow-x: hidden;
     }
 
     /* Header */
@@ -264,7 +266,7 @@
       <div class="service-content">
         <h3>Modelado 3D Multidisciplinar</h3>
         <p>Desarrollo de modelos BIM precisos para arquitectura, estructuras e instalaciones.</p>
-        <a href="#" class="btn-link">Más información</a>
+        <a href="javascript:void(0);" class="btn-link" data-service-id="modelado3D">Más información</a>
       </div>
     </article>
     <!-- Renderizado Fotorrealista -->
@@ -276,7 +278,7 @@
       <div class="service-content">
         <h3>Renderizado Fotorrealista</h3>
         <p>Visualizaciones arquitectónicas de alta calidad con iluminación realista y entornos virtuales.</p>
-        <a href="#" class="btn-link">Ver ejemplos</a>
+        <a href="javascript:void(0);" class="btn-link" data-service-id="renderizado">Ver ejemplos</a>
       </div>
     </article>
     <!-- Animaciones 4D -->
@@ -288,7 +290,7 @@
       <div class="service-content">
         <h3>Animaciones 4D</h3>
         <p>Simulaciones temporales de construcción con integración de cronogramas y gestión de recursos.</p>
-        <a href="#" class="btn-link">Ver demostración</a>
+        <a href="javascript:void(0);" class="btn-link" data-service-id="animaciones4D">Ver demostración</a>
       </div>
     </article>
     <!-- Automatización de Procesos -->
@@ -300,7 +302,8 @@
       <div class="service-content">
         <h3>Automatización de Procesos</h3>
         <p>Desarrollo de herramientas personalizadas para Revit utilizando Dynamo y C#.</p>
-        <a href="#automatizacion" class="btn-link">Ver casos de éxito</a>
+        <!-- Este botón ahora mostrará la cinta de add-ins -->
+        <a href="javascript:void(0);" class="btn-link" data-service-id="automatizacion-ribbon">Ver casos de éxito</a>
       </div>
     </article>
     <!-- Business Intelligence Avanzado -->
@@ -312,7 +315,7 @@
       <div class="service-content">
         <h3>Business Intelligence Avanzado</h3>
         <p>Transformación de datos en insights accionables con dashboards interactivos.</p>
-        <a href="#powerbi-demo" class="btn-link">Ver demostración</a>
+        <a href="javascript:void(0);" class="btn-link" data-service-id="businessIntelligence">Ver demostración</a>
       </div>
     </article>
   </div>
@@ -328,6 +331,42 @@
     });
   });
 </script>
+
+<!-- Nuevo panel para la cinta de add-ins de automatización -->
+<section id="automationRibbonPanel" class="automation-ribbon-panel">
+  <h3>Nuestros Add-ins de Automatización</h3>
+  <div class="add-in-ribbon" id="addInRibbonContainer">
+    <!-- Las portadas de los add-ins se insertarán aquí dinámicamente -->
+  </div>
+</section>
+
+<!-- Sección para el detalle expandido de cualquier servicio o add-in -->
+<section id="serviceExpandedDetail" class="service-expanded-detail">
+  <div class="expanded-content-wrapper">
+    <span class="close-expanded-detail-button">&times;</span>
+    <h2 id="expanded-detail-title"></h2>
+    <p id="expanded-detail-description"></p>
+    
+    <!-- Contenedor del video de YouTube -->
+    <div id="expanded-detail-video-player" class="video-container"></div>
+
+    <h3 id="expanded-detail-features-title" style="display: none;">Características Principales:</h3>
+    <ul id="expanded-detail-features-list"></ul>
+
+    <h3 id="expanded-detail-benefits-title" style="display: none;">Beneficios Clave:</h3>
+    <ul id="expanded-detail-benefits-list"></ul>
+
+    <p id="expanded-detail-conclusion"></p>
+    
+    <!-- Contenedor para el collage de imágenes -->
+    <div id="expanded-detail-image-collage" class="image-collage-container"></div>
+
+    <div class="expanded-detail-actions" id="expanded-detail-actions-container">
+      <!-- Los botones se insertarán aquí dinámicamente -->
+    </div>
+  </div>
+</section>
+
 
 <section id="about" class="about" aria-labelledby="expertos-titulo">
   <div class="about-overlay"></div>
@@ -429,6 +468,7 @@
       <p>&copy; 2024 DiFlow. Todos los derechos reservados.</p>
     </div>
   </footer>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

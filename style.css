@@ -506,3 +506,308 @@ input:focus, textarea:focus {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+/* Estilos para la nueva sección expandible general */
+.service-expanded-detail {
+  background-color: var(--secondary-color); /* Fondo claro para contrastar con servicios */
+  color: var(--text-dark);
+  padding: 0 1rem; /* Padding horizontal inicial */
+  max-height: 0; /* Inicialmente oculto */
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.7s ease-in-out, opacity 0.7s ease-in-out, padding 0.7s ease-in-out;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.05); /* Sombra sutil arriba */
+  position: relative; /* Para el botón de cerrar */
+}
+
+.service-expanded-detail.show {
+  max-height: 2000px; /* Suficientemente grande para el contenido */
+  opacity: 1;
+  padding: 3rem 1rem; /* Padding cuando está visible */
+}
+
+.expanded-content-wrapper {
+  max-width: 1000px; /* Increased max-width for more content */
+  margin: 0 auto;
+  padding: 2.5rem; /* Adjusted padding */
+  border-radius: 10px;
+  background-color: #fff; /* Fondo blanco para el contenido dentro */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.expanded-content-wrapper h2 {
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.expanded-content-wrapper h3 {
+  color: var(--primary-color);
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.expanded-content-wrapper p, .expanded-content-wrapper ul {
+  color: #555;
+  margin-bottom: 1rem;
+  font-size: 1.05rem; /* Slightly increased font size for readability */
+}
+
+.expanded-content-wrapper ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.expanded-content-wrapper ul li {
+  margin-bottom: 0.5rem;
+}
+
+.close-expanded-detail-button {
+  color: #aaa;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-expanded-detail-button:hover,
+.close-expanded-detail-button:focus {
+  color: #333;
+  text-decoration: none;
+}
+
+.expanded-detail-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap; /* Para responsividad en botones */
+}
+
+.expanded-detail-actions .btn {
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+/* Estilos para el collage de imágenes */
+.image-collage-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+  gap: 15px; /* Espacio entre imágenes */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.collage-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.collage-image:hover {
+  transform: scale(1.03);
+}
+
+/* Styles for the new Add-in Ribbon Panel */
+.automation-ribbon-panel {
+  background-color: var(--secondary-color); /* Fondo para el panel de la cinta */
+  padding: 0 1rem; /* Padding horizontal inicial */
+  max-height: 0; /* Inicialmente oculto */
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.7s ease-in-out, opacity 0.7s ease-in-out, padding 0.7s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombra sutil abajo */
+  position: relative;
+  display: flex; /* Para centrar la cinta */
+  justify-content: center; /* Centrar la cinta */
+  align-items: center; /* Centrar verticalmente */
+  flex-direction: column; /* Para que el título y la cinta estén en columna */
+}
+
+.automation-ribbon-panel.show {
+  max-height: 800px; /* Increased max-height for more content */
+  opacity: 1;
+  padding: 3rem 1rem; /* Increased padding-top to give more space for hover animation */
+}
+
+.automation-ribbon-panel h3 {
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: start;
+}
+
+.add-in-ribbon {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 2.5rem; /* Increased space between add-in covers */
+  padding-bottom: 10px; /* Space for scrollbar */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--primary-color) #f1f1f1; /* Firefox */
+  max-width: 100%; /* Asegura que no se desborde */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center items when they wrap */
+  padding: 20px;
+}
+
+/* Custom scrollbar for Webkit browsers */
+.add-in-ribbon::-webkit-scrollbar {
+  height: 8px;
+}
+
+.add-in-ribbon::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.add-in-ribbon::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.add-in-ribbon::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+.add-in-cover {
+  flex-shrink: 0; /* Prevent items from shrinking */
+  width: 250px; /* Further increased width for each cover */
+  height: 290px; /* Increased height to give more space for text and prevent clipping */
+  background: rgba(255, 255, 255, 0.15); /* Slightly transparent background */
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 1.5rem; /* Increased padding */
+  padding-top: 2rem; /* Added more padding to the top to prevent clipping on hover */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Para posicionar la etiqueta de "GRATIS" */
+}
+
+.add-in-cover:hover {
+  transform: translateY(-10px); /* Increased translateY for more pronounced effect */
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.add-in-cover img {
+  width: 140px; /* Increased size for add-in icon */
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 1rem; /* Increased margin */
+  border-radius: 5px; /* Slightly rounded images */
+}
+
+.add-in-cover h4 {
+  color: var(--text-light); /* Text color for add-in title */
+  font-size: 1.4rem; /* Further increased font size */
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* New style for the "Free" label */
+.free-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+
+/* Adjustments for service-content in automation card */
+.service-card .service-content p {
+  background: none; /* Remove background from the general description */
+  color: #fff;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos para el reproductor de video */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+/* Responsive para el modal (ahora para la sección expandida) */
+@media (max-width: 768px) {
+  .expanded-content-wrapper {
+    padding: 20px;
+    width: 95%;
+  }
+
+  .expanded-content-wrapper h2 {
+    font-size: 1.8rem;
+  }
+
+  .expanded-detail-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .expanded-detail-actions .btn {
+    width: 100%;
+  }
+
+  .image-collage-container {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
+
+  .add-in-cover {
+    width: 180px; /* Adjusted width for mobile */
+    height: 240px; /* Adjusted height for mobile */
+    padding: 1rem;
+    padding-top: 1.5rem; /* Adjusted padding-top for mobile */
+  }
+
+  .add-in-cover img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .add-in-cover h4 {
+    font-size: 1.1rem;
+  }
+
+  .add-in-ribbon {
+    gap: 1.5rem; /* Adjusted gap for mobile */
+  }
+}
