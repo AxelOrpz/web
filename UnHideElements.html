@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Descubre UnhideElements, tu add-in esencial para Revit. Visualiza, selecciona y desoculta elementos de manera eficiente.">
-  <title>UnhideElements · Tu Add-in Esencial para Revit - DiFlow</title>
+  <meta name="description" content="Discover UnhideElements, your essential Revit add-in. Visualize, select, and unhide elements efficiently.">
+  <title>UnhideElements · Your Essential Revit Add-in - DiFlow</title>
   <meta property="og:image" content="img/og-image.jpg">
   
-  <!-- Preconexión y precarga de recursos -->
+  <!-- Preconnection and resource preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="style.css" as="style">
   
-  <!-- Favicon estándar -->
+  <!-- Standard Favicon -->
   <link rel="icon" type="image/png" href="img/DiFlow_Isotipo_120x120.png">
 
-  <!-- Versión para Apple/Safari -->
+  <!-- Version for Apple/Safari -->
   <link rel="apple-touch-icon" href="img/DiFlow_Isotipo_120x120.png">
 
-  <!-- Estilos principales -->
+  <!-- Main Styles -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Estilos específicos para esta página (pueden moverse a style.css si se prefiere) -->
+  <!-- Specific styles for this page (can be moved to style.css if preferred) -->
   <style>
-    /* Asegura que el cuerpo tenga un fondo claro para el contenido principal */
+    /* Ensures the body has a light background for the main content */
     body {
-      background-color: var(--secondary-color); /* Usar el color secundario definido en style.css */
+      background-color: var(--secondary-color); /* Use the secondary color defined in style.css */
       color: var(--text-dark);
     }
 
-    /* Estilos para el contenedor principal de la página del add-in */
+    /* Styles for the main container of the add-in page */
     .add-in-page-container {
       max-width: 1000px;
-      margin: 4rem auto 2rem auto; /* Más margen superior para el contenido */
+      margin: 4rem auto 2rem auto; /* More top margin for content */
       padding: 2.5rem;
       background-color: #fff;
       border-radius: 10px;
@@ -41,14 +41,14 @@
     }
 
     .add-in-page-container h1 {
-      color: var(--primary-dark); /* Usando primary-dark para el título principal */
+      color: var(--primary-dark); /* Using primary-dark for the main title */
       margin-bottom: 1.5rem;
       font-size: 2.5rem;
       text-align: center;
     }
 
     .add-in-page-container h2 {
-      color: var(--primary-color); /* Usando primary-color para los subtítulos de la página */
+      color: var(--primary-color); /* Using primary-color for page subtitles */
       margin-top: 2rem;
       margin-bottom: 1rem;
       font-size: 1.8rem;
@@ -85,7 +85,7 @@
       border-radius: 8px;
     }
 
-    /* Estilos para el botón de regresar */
+    /* Styles for the back button */
     .back-button-container {
       text-align: center;
       margin-top: 2rem;
@@ -129,16 +129,16 @@
       }
     }
 
-    /* Estilos específicos para la sección de ayuda */
+    /* Specific styles for the help section */
     .help-section {
       margin-top: 4rem;
       padding-top: 2rem;
       border-top: 1px solid #eee;
     }
 
-    /* Títulos de las subsecciones de ayuda (Funcionalidad General, Uso de la Interfaz, etc.) */
+    /* Titles of help sub-sections (General Functionality, Interface Usage, etc.) */
     .help-section h3 { 
-        color: var(--primary-dark); /* Usando primary-dark para los títulos de subsección de ayuda */
+        color: var(--primary-dark); /* Using primary-dark for help sub-section titles */
         margin-top: 2rem;
         margin-bottom: 1rem;
         font-size: 1.5rem;
@@ -153,11 +153,11 @@
     }
 
     .faq-item h3 {
-      color: var(--primary-color); /* Usando primary-color para las preguntas del FAQ */
+      color: var(--primary-color); /* Using primary-color for FAQ questions */
       margin-top: 0;
       margin-bottom: 0.5rem;
       font-size: 1.3rem;
-      cursor: pointer; /* Para indicar que es clickeable */
+      cursor: pointer; /* To indicate it's clickable */
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -170,23 +170,23 @@
     }
 
     .faq-item.active h3::after {
-      content: '×'; /* Cambia a una 'x' cuando está activo */
-      transform: rotate(0deg); /* No rotar la 'x' */
+      content: '×'; /* Changes to an 'x' when active */
+      transform: rotate(0deg); /* No rotation for 'x' */
     }
 
-    .faq-item p, .faq-item ul, .faq-item ol { /* Asegura que el texto de la respuesta sea visible y aplica a listas */
+    .faq-item p, .faq-item ul, .faq-item ol { /* Ensures response text is visible and applies to lists */
       margin-top: 0.5rem;
       margin-bottom: 0;
       color: #555; 
-      display: none; /* Oculto por defecto */
+      display: none; /* Hidden by default */
     }
 
     .faq-item.active p, .faq-item.active ul, .faq-item.active ol {
-      display: block; /* Mostrar cuando está activo */
+      display: block; /* Show when active */
     }
 
     .tutorial-list {
-      list-style: none; /* Quitamos el estilo de lista para la ol principal */
+      list-style: none; /* Remove list style for the main ordered list */
       padding: 0;
     }
 
@@ -195,7 +195,7 @@
     }
 
     .tutorial-list li strong {
-        color: var(--primary-dark); /* Color para las palabras clave en la lista de tutoriales */
+        color: var(--primary-dark); /* Color for keywords in the tutorial list */
     }
 
     .tutorial-list a {
@@ -215,7 +215,7 @@
       transform: translateY(-2px);
     }
 
-    /* Estilos para el formulario de soporte */
+    /* Styles for the support form */
     .support-form {
       max-width: 600px;
       margin: 2rem auto;
@@ -233,7 +233,7 @@
       display: block;
       margin-bottom: 0.5rem;
       font-weight: bold;
-      color: #333; /* Color oscuro fijo para asegurar visibilidad en cualquier modo */
+      color: #333; /* Fixed dark color to ensure visibility in any mode */
     }
 
     .support-form input[type="text"],
@@ -244,12 +244,13 @@
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 1rem;
-      box-sizing: border-box; /* Asegura que el padding no aumente el ancho */
+      box-sizing: border-box; /* Ensures padding does not increase width */
     }
 
     .support-form textarea {
-      resize: vertical; /* Permite redimensionar verticalmente */
+      resize: vertical; /* Allows vertical resizing */
       min-height: 100px;
+      font-style: italic; /* Applied inline previously, now in style block for consistency */
     }
 
     .support-form button[type="submit"] {
@@ -312,15 +313,21 @@
       to { transform: rotate(360deg); }
     }
 
-    /* Ajustes específicos para el footer */
+    /* Specific footer adjustments */
     footer {
-      color: #ccc; /* Color claro para el texto del footer, visible sobre fondo oscuro */
+      background: var(--background-dark); /* Retains original background */
+      color: #ccc; /* Light color for footer text, visible on dark background */
       padding: 3rem 1rem;
       text-align: center;
     }
 
+    footer .footer-content p,
+    footer .social-links a {
+      color: #ccc; /* Ensures text and links are visible */
+    }
+
     footer .social-links a img {
-        filter: invert(1) brightness(0.8); /* Ajusta las imágenes de los iconos para que se vean sobre fondo oscuro */
+        filter: invert(1) brightness(0.8); /* Adjusts icon images to be visible on dark background */
     }
 
   </style>
@@ -328,11 +335,11 @@
 <body>
   <main>
     <div class="add-in-page-container">
-      <h1>UnHideElements: Tu Aliado para el Control Total de Visibilidad en Revit</h1>
+      <h1>UnHideElements: Your Ally for Total Visibility Control in Revit</h1>
       
-      <p>Descubre cómo UnHideElements revoluciona la gestión de elementos ocultos en Revit. Diseñado por expertos BIM para arquitectos, ingenieros y coordinadores, este add-in te ofrece control absoluto sobre la visibilidad de elementos en tus proyectos, eliminando horas de trabajo manual con una solución elegante y eficiente.</p>
+      <p>Discover how UnHideElements revolutionizes hidden element management in Revit. Designed by BIM experts for architects, engineers, and coordinators, this add-in offers you absolute control over element visibility in your projects, eliminating hours of manual work with an elegant and efficient solution.</p>
 
-      <h2>Video de Demostración</h2>
+      <h2>Demonstration Video</h2>
       <div class="video-container">
         <iframe src="https://www.youtube.com/embed/rYMbl6T7S-0" 
                 frameborder="0" 
@@ -340,181 +347,182 @@
                 allowfullscreen></iframe>
       </div>
 
-      <h2>Características Clave:</h2>
+      <h2>Key Features:</h2>
       <ul>
-        <li><strong>Detección Inteligente:</strong> Identifica elementos ocultos explícitamente en cualquier vista compatible (planos, secciones, 3D)</li>
-        <li><strong>Jerarquía Visual:</strong> Explora elementos organizados por categoría > familia > elemento en un árbol interactivo</li>
-        <li><strong>Selección Flexible:</strong> Desoculta elementos individuales, familias completas o categorías enteras</li>
-        <li><strong>Sincronización en Tiempo Real:</strong> Al seleccionar una vista, se actualiza automáticamente la lista de elementos ocultos</li>
-        <li><strong>Zoom Inteligente:</strong> Enfoca automáticamente los elementos desocultados después de la operación</li>
+        <li><strong>Intelligent Detection:</strong> Identifies explicitly hidden elements in any compatible view (plans, sections, 3D)</li>
+        <li><strong>Visual Hierarchy:</strong> Explore elements organized by category > family > element in an interactive tree</li>
+        <li><strong>Flexible Selection:</strong> Unhide individual elements, entire families, or whole categories</li>
+        <li><strong>Real-time Synchronization:</strong> Selecting a view automatically updates the list of hidden elements</li>
+        <li><strong>Smart Zoom:</strong> Automatically zooms to unhidden elements after the operation</li>
       </ul>
 
-      <h2>Beneficios Exclusivos:</h2>
+      <h2>Exclusive Benefits:</h2>
       <ul>
-        <li>⏱<strong>Ahorro de 70% en tiempo</strong> en revisiones de visibilidad</li>
-        <li><strong>Precisión garantizada:</strong> Elimina errores de elementos ocultos accidentalmente</li>
-        <li><strong>Flujo BIM optimizado:</strong> Integración perfecta en tu proceso de trabajo</li>
-        <li><strong>Interfaz intuitiva:</strong> Diseño WPF moderno con controles táctiles</li>
-        <li><strong>Operaciones reversibles:</strong> Todos los cambios pueden deshacerse con Ctrl+Z</li>
+        <li><strong>70% time saving</strong> in visibility reviews</li>
+        <li><strong>Guaranteed accuracy:</strong> Eliminates errors from accidentally hidden elements</li>
+        <li><strong>Optimized BIM workflow:</strong> Seamless integration into your work process</li>
+        <li><strong>Intuitive interface:</strong> Modern WPF design with touch controls</li>
+        <li><strong>Reversible operations:</strong> All changes can be undone with Ctrl+Z</li>
       </ul>
 
-      <p>¡Transforma tu gestión de visibilidad en Revit hoy mismo!</p>
+      <p>Transform your visibility management in Revit today!</p>
 
       <div class="add-in-actions">
-        <a href="https://apps.autodesk.com/RVT/en/Detail/Index?id=7882492729173493382&appLang=en&os=Win64&mode=preview&autostart=True&loginRequired=True" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Descargar en Autodesk App Store</a>
-        <a href="#contact-support" class="btn btn-primary">Solicitar Demo Personalizada</a>
+        <a href="https://apps.autodesk.com/RVT/en/Detail/Index?id=7882492729173493382&appLang=en&os=Win64&mode=preview&autostart=True&loginRequired=True" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download on Autodesk App Store</a>
+        <a href="#contact-support" class="btn btn-primary">Request Personalized Demo</a>
       </div>
 
       <section class="help-section">
-        <h2 style="margin-top: 3rem;">Soporte y Asistencia Técnica</h2>
+        <h2 style="margin-top: 3rem;">Support and Technical Assistance</h2>
         
-        <h3>Funcionalidad General</h3>
+        <h3>General Functionality</h3>
         <div class="faq-item">
-          <h3>¿Qué hace UnHideElements?</h3>
-          <p>Localiza elementos ocultos explícitamente ("Hide Element") en vistas compatibles (planos, secciones, 3D), los organiza en una jerarquía visual (categoría > familia > elemento) y permite desocultarlos selectivamente con confirmación visual inmediata.</p>
+          <h3>What exactly does UnHideElements do?</h3>
+          <p>It locates explicitly hidden elements ("Hide Element") in compatible Revit views (plans, sections, 3D), organizes them into a visual hierarchy (category > family > element), and allows them to be unhidden selectively with immediate visual confirmation.</p>
         </div>
         <div class="faq-item">
-          <h3>¿En qué versiones de Revit funciona?</h3>
-          <p>Compatible con Revit 2024+ gracias a su implementación con las APIs más recientes de Autodesk.</p>
+          <h3>Which Revit versions does it work with?</h3>
+          <p>Compatible with Revit 2025+ thanks to its implementation with the latest Autodesk APIs.</p>
         </div>
         <div class="faq-item">
-          <h3>¿Requiere configuración compleja?</h3>
-          <p>Cero configuración - Se instala y aparece automáticamente en la pestaña "DiFlow" de Revit.</p>
+          <h3>Does it require complex configuration?</h3>
+          <p>Zero configuration - It installs and automatically appears in the "DiFlow" tab in Revit.</p>
         </div>
 
-        <h3>Uso Avanzado</h3>
+        <h3>Advanced Usage</h3>
         <div class="faq-item">
-          <h3>¿Cómo accedo a las funciones avanzadas?</h3>
-          <p>Al ejecutarlo, muestra un panel flotante con:</p>
+          <h3>How do I access advanced features?</h3>
+          <p>When run, it displays a floating panel with:</p>
           <ul>
-            <li>Lista de vistas con elementos ocultos (izquierda)</li>
-            <li>Árbol jerárquico de elementos (derecha)</li>
-            <li>Controles para expandir/seleccionar/desocultar</li>
+            <li>List of views with hidden elements (left)</li>
+            <li>Hierarchical tree of elements (right)</li>
+            <li>Controls to expand/select/unhide</li>
           </ul>
         </div>
         <div class="faq-item">
-          <h3>¿Por qué no veo elementos en ciertas vistas?</h3>
+          <h3>Why don't I see elements in certain views?</h3>
           <div>
-            <p>Esto puede deberse a:</p>
-            <ul> <li>Vista no compatible (tablas, planificaciones)</li>
-              <li>Elementos ocultos por filtros/plantillas (no explícitamente)</li>
-              <li>Elementos en grupos o modelos vinculados</li>
-              <li>Aislamiento temporal activado (Temporary Hide/Isolate)</li>
+            <p>This may be due to:</p>
+            <ul> 
+              <li>Incompatible view (schedules, sheets)</li>
+              <li>Elements hidden by filters/templates (not explicitly)</li>
+              <li>Elements in groups or linked models</li>
+              <li>Temporary Hide/Isolate activated</li>
             </ul>
           </div>
         </div>
         <div class="faq-item">
-          <h3>¿Cómo gestiono grandes cantidades de elementos?</h3>
-          <p>Usa nuestros controles especiales:</p>
+          <h3>How do I manage large quantities of elements?</h3>
+          <p>Use our special controls:</p>
           <ul>
-            <li><strong>"Expand All"</strong>/<strong>"Collapse All"</strong>: Gestiona la jerarquía</li>
-            <li><strong>"Select All"</strong>: Marca todos los elementos</li>
-            <li><strong>Filtro por vista</strong>: Selecciona vistas específicas en el panel izquierdo</li>
+            <li><strong>"Expand All"</strong>/<strong>"Collapse All"</strong>: Manage hierarchy</li>
+            <li><strong>"Select All"</strong>: Check all elements</li>
+            <li><strong>Filter by view</strong>: Select specific views in the left panel</li>
           </ul>
         </div>
 
-        <h3>Solución de Problemas</h3>
+        <h3>Troubleshooting</h3>
         <div class="faq-item">
-          <h3>Elementos no aparecen tras desocultar</h3>
-          <p>Verifica:</p>
+          <h3>Elements do not appear after unhiding</h3>
+          <p>Verify:</p>
           <ul>
-            <li>Filtros aplicados en la vista</li>
-            <li>Plantillas de vista que sobrescriben visibilidad</li>
-            <li>Si los elementos pertenecen a grupos (requiere desocultar manualmente el grupo)</li>
+            <li>Filters applied in the view</li>
+            <li>View templates that override visibility</li>
+            <li>If elements belong to groups (requires manually unhiding the group)</li>
           </ul>
         </div>
         <div class="faq-item">
-          <h3>Rendimiento en proyectos grandes</h3>
-          <p>Hemos optimizado el add-in con:</p>
+          <h3>Add-in crashes when opened in large projects</h3>
+          <p>Optimize performance:</p>
           <ul>
-            <li>Virtualización de árboles (solo carga elementos visibles)</li>
-            <li>Procesamiento en segundo plano</li>
-            <li>Exclusión automática de vistas no compatibles</li>
+            <li>Avoid processing incompatible views (e.g., schedules).</li>
+            <li>Uses <code>VirtualizingStackPanel</code> in the TreeView (already implemented).</li>
           </ul>
         </div>
         <div class="faq-item">
-          <h3>La pestaña DiFlow no aparece</h3>
+          <h3>The "DiFlow" tab does not appear in Revit</h3>
           <div>
-            <p>Soluciones:</p>
-            <ul> <li>Verifica la instalación en <code>C:\ProgramData\Autodesk\Revit\Addins\2024</code></li>
-              <li>Revisa errores en <em>Manage > Add-in Manager</em></li>
-              <li>Si la instalación se hizo desde la página oficial de Autodesk App Store, el add-in debería aparecer automáticamente en la pestaña de <strong>Add-Ins</strong>.</li>
-              <li><a href="https://www.ejemplo.com/descarga-ultima-version" target="_blank" rel="noopener noreferrer">Descarga la última versión</a> desde nuestra página</li>
+            <p>Solutions:</p>
+            <ul> 
+              <li>Verify installation in <code>C:\ProgramData\Autodesk\Revit\Addins\2024</code></li>
+              <li>Check for errors in <em>Manage > Add-in Manager</em></li>
+              <li>If the installation was done from the official Autodesk App Store page, the add-in should automatically appear in the <strong>Add-Ins</strong> tab.</li>
+              <li><a href="https://www.ejemplo.com/descarga-ultima-version" target="_blank" rel="noopener noreferrer">Download the latest version</a> from our page</li>
             </ul>
           </div>
         </div>
 
-        <h3>Limitaciones Técnicas</h3>
+        <h3>Technical Limitations</h3>
         <div class="faq-item">
-          <h3>¿Funciona con elementos de modelos vinculados?</h3>
-          <p>No compatible actualmente - Solo elementos del modelo activo.</p>
+          <h3>Does it work with linked model elements?</h3>
+          <p>Not currently compatible - Only manages elements from the current model (due to Revit API restrictions).</p>
         </div>
         <div class="faq-item">
-          <h3>¿Admite vistas de planificación o tablas?</h3>
-          <p>No. Solo vistas gráficas: planos, secciones, elevaciones y 3D.</p>
+          <h3>Does it support schedules or tables?</h3>
+          <p>No. Only graphical views: plans, sections, elevations, and 3D.</p>
         </div>
         <div class="faq-item">
-          <h3>¿Se pueden desocultar elementos por categoría?</h3>
-          <p>Sí. En el árbol jerárquico, marca la categoría o familia para desocultar todos sus elementos. Las operaciones usan transacciones reversibles (<code>Transaction</code>), permitiendo deshacer cambios con <code>Ctrl+Z</code>.</p>
+          <h3>Can elements be unhidden by category?</h3>
+          <p>Yes. In the hierarchical tree, check the category or family to unhide all its elements. Operations use reversible transactions (<code>Transaction</code>), allowing changes to be undone with <code>Ctrl+Z</code>.</p>
         </div>
 
-        <h2 style="margin-top: 3rem;">Domina UnHideElements en 5 Minutos</h2>
-        <div class="faq-item"> <!-- Envuelto en faq-item para la funcionalidad de acordeón -->
-          <h3>Guía Visual Rápida:</h3>
-          <div> <!-- Contenido a mostrar/ocultar -->
+        <h2 style="margin-top: 3rem;">Master UnHideElements in 5 Minutes</h2>
+        <div class="faq-item"> <!-- Wrapped in faq-item for accordion functionality -->
+          <h3>Quick Visual Guide:</h3>
+          <div> <!-- Content to show/hide -->
             <ol class="tutorial-list">
-              <li><strong>Inicio:</strong> Click en <code>DiFlow > Hiden Elements > UnHideElements</code></li>
-              <li><strong>Selección de vista:</strong> Elige una vista del panel izquierdo</li>
-              <li><strong>Exploración:</strong> Navega por categorías → familias → elementos</li>
-              <li><strong>Selección:</strong> Marca elementos individuales o categorías completas</li>
-              <li><strong>Acción:</strong> Click <code>Unhide Checked Elements</code> para hacerlos visibles</li>
+              <li><strong>Start:</strong> Click on <code>DiFlow > Hidden Elements > UnHideElements</code></li>
+              <li><strong>Select view:</strong> Choose a view from the left panel</li>
+              <li><strong>Explore:</strong> Navigate through categories → families → elements</li>
+              <li><strong>Select:</strong> Check individual elements or entire categories</li>
+              <li><strong>Action:</strong> Click <code>Unhide Checked Elements</code> to make them visible</li>
             </ol>
           </div>
         </div>
         <div class="add-in-actions">
-          <a href="https://www.youtube.com/watch?v=rYMbl6T7S-0" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ver video tutorial completo</a>
-          <a href="https://www.ejemplo.com/guia-pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Descargar PDF guía</a>
+          <a href="https://www.youtube.com/watch?v=rYMbl6T7S-0" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Watch full video tutorial</a>
+          <a href="https://www.ejemplo.com/guia-pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download PDF guide</a>
         </div>
 
 
-        <h3 id="contact-support">Contactar a Soporte Técnico</h3>
-        <p>Si no encuentras la respuesta a tu pregunta en las FAQ o necesitas asistencia personalizada, por favor, utiliza el siguiente formulario para contactarnos. Nos pondremos en contacto contigo a la brevedad posible.</p>
+        <h3 id="contact-support">Contact Technical Support</h3>
+        <p>If you cannot find the answer to your question in the FAQs or need personalized assistance, please use the form below to contact us. We will get back to you as soon as possible.</p>
         
         <form class="support-form" id="supportForm">
           <div class="form-group">
-            <label for="supportName">Tu Nombre:</label>
-            <input type="text" id="supportName" name="user_name" placeholder="Ingresa tu nombre completo" required>
+            <label for="supportName">Name:</label>
+            <input type="text" id="supportName" name="user_name" placeholder="Enter your full name" required>
           </div>
           
           <div class="form-group">
-            <label for="supportEmail">Tu Correo Electrónico:</label>
-            <input type="email" id="supportEmail" name="user_email" placeholder="ejemplo@correo.com" required>
+            <label for="supportEmail">Email:</label>
+            <input type="email" id="supportEmail" name="user_email" placeholder="example@email.com" required>
           </div>
 
           <div class="form-group">
-            <label for="supportSubject">Asunto:</label>
-            <input type="text" id="supportSubject" name="subject" value="Soporte para UnhideElements" placeholder="Escribe el asunto de tu consulta" required>
+            <label for="supportSubject">Subject:</label>
+            <input type="text" id="supportSubject" name="subject" value="UnhideElements Support" placeholder="Write the subject of your inquiry" required>
           </div>
           
           <div class="form-group">
-            <label for="supportMessage">Tu Mensaje:</label>
-            <textarea id="supportMessage" name="message" rows="5" placeholder="Describe tu consulta o problema aquí" required></textarea>
+            <label for="supportMessage">Message:</label>
+            <textarea id="supportMessage" name="message" rows="5" placeholder="Describe your inquiry or problem here" required></textarea>
           </div>
           
-          <button type="submit">Enviar Consulta de Soporte</button>
+          <button type="submit">Send Support Inquiry</button>
         </form>
       </section>
 
     </div>
     <div class="back-button-container">
-      <a href="index.html" class="back-button">← Volver a Servicios</a>
+      <a href="index.html" class="back-button">← Back to Services</a>
     </div>
   </main>
 
-  <!-- Puedes mantener el footer si lo deseas, o eliminarlo para una página más concisa -->
+  <!-- You can keep the footer if desired, or remove it for a more concise page -->
   <footer role="contentinfo">
     <div class="footer-content">
-      <img src="img/DiFlow_Imagotipo_1920x1920_B.png" alt="Logo DiFlow" width="120">
+      <img src="img/DiFlow_Imagotipo_1920x1920_B.png" alt="DiFlow Logo" width="120">
       
       <div class="social-links">
         <a href="https://www.linkedin.com/in/axel-oropeza/" 
@@ -534,18 +542,18 @@
            width="30"></a>
       </div>
       
-      <p>&copy; 2024 DiFlow. Todos los derechos reservados.</p>
+      <p>&copy; 2024 DiFlow. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    // Inicialización de EmailJS
+    // EmailJS Initialization
     (function() {
       emailjs.init('wDNNgwyGYGJxjWlWU'); // User ID
     })();
 
-    // Función para mostrar notificaciones (copiada de app.js para ser autocontenida)
+    // Function to show notifications (copied from app.js to be self-contained)
     const showNotification = (message, type = 'info') => {
       const notification = document.createElement('div');
       notification.className = `notification ${type}`;
@@ -562,7 +570,7 @@
     };
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Manejo del formulario de soporte
+      // Support form handling
       const supportForm = document.getElementById('supportForm');
       if (supportForm) {
         supportForm.addEventListener('submit', async (e) => {
@@ -571,33 +579,33 @@
           
           try {
             if (!supportForm.checkValidity()) {
-              throw new Error('Por favor completa todos los campos del formulario de soporte.');
+              throw new Error('Please complete all required fields in the support form.');
             }
 
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="loader"></span> Enviando...';
+            submitBtn.innerHTML = '<span class="loader"></span> Sending...';
 
-            // Usar el mismo servicio y plantilla de EmailJS, o crear uno nuevo si es necesario
+            // Use the same EmailJS service and template, or create new ones if necessary
             await emailjs.sendForm(
-              'service_jss790u', // Reemplaza con tu Service ID de EmailJS
-              'template_8e3quit', // Reemplaza con tu Template ID de EmailJS para soporte
+              'service_jss790u', // Replace with your EmailJS Service ID
+              'template_8e3quit', // Replace with your EmailJS Template ID for support
               supportForm
             );
 
-            showNotification('✅ Mensaje de soporte enviado correctamente', 'success');
+            showNotification('✅ Support message sent successfully', 'success');
             supportForm.reset();
             
           } catch (error) {
-            showNotification(`❌ Error al enviar soporte: ${error.message}`, 'error');
-            console.error('EmailJS Error (Soporte):', error);
+            showNotification(`❌ Error sending support: ${error.message}`, 'error');
+            console.error('EmailJS Error (Support):', error);
           } finally {
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Enviar Consulta de Soporte';
+            submitBtn.textContent = 'Send Support Inquiry';
           }
         });
       }
 
-      // Funcionalidad para las Preguntas Frecuentes (FAQ)
+      // FAQ functionality
       document.querySelectorAll('.faq-item h3').forEach(header => {
         header.addEventListener('click', () => {
           const faqItem = header.closest('.faq-item');
@@ -605,7 +613,7 @@
         });
       });
 
-      // Asegurarse de que el botón "Contactar para Demo" apunte al formulario de soporte
+      // Ensure "Request Personalized Demo" button points to the support form
       const contactDemoButton = document.querySelector('a[href="#contact-support"]');
       if (contactDemoButton) {
         contactDemoButton.addEventListener('click', function(e) {

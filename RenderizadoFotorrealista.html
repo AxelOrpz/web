@@ -24,13 +24,13 @@
 
     .gallery-fullscreen-container {
       position: relative; /* Para posicionar el botón de cerrar */
-      width: 100vw;
+      width: 100vw; /* Ocupa el 100% del ancho del viewport */
       min-height: 100vh; /* Asegura que ocupe al menos la altura de la ventana */
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px; /* Pequeño padding para los bordes */
+      align-items: center; /* Centra el contenido horizontalmente */
+      justify-content: center; /* Centra el contenido verticalmente (si no hay desbordamiento) */
+      padding: 0; /* Eliminado el padding para que las imágenes toquen los bordes */
       box-sizing: border-box; /* Incluye padding en el ancho/alto */
     }
 
@@ -55,35 +55,34 @@
 
     .image-grid {
       display: grid;
-      /* Ajusta las columnas para que las imágenes sean grandes y responsivas */
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: 15px; /* Espacio entre imágenes */
-      width: 100%;
-      max-width: 1600px; /* Límite para que no sean excesivamente grandes en pantallas muy anchas */
-      margin: auto; /* Centra la cuadrícula */
+      /* Por defecto, 3 columnas de igual ancho */
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 0; /* ¡Clave para eliminar el espacio entre imágenes! */
+      width: 100%; /* Ocupa el 100% del ancho de su contenedor padre */
+      max-width: 100%; /* Asegura que no se desborde */
+      margin: auto; /* Centra la cuadrícula dentro de su contenedor */
+      grid-auto-rows: min-content; /* Permite que las filas se ajusten a la altura de su contenido */
+      grid-auto-flow: dense; /* ¡Clave para el efecto Tetris! Intenta rellenar huecos */
     }
 
     .grid-item {
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra más pronunciada */
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde */
+      border-radius: 0; /* Eliminado el border-radius */
+      box-shadow: none; /* Eliminado el box-shadow */
+      transition: transform 0.3s ease; /* Solo transición de transformación */
       background-color: #222; /* Fondo para evitar flashes blancos al cargar */
-      display: flex; /* Para centrar la imagen si no ocupa todo el espacio */
-      align-items: center;
-      justify-content: center;
     }
 
     .grid-item:hover {
-      transform: translateY(-8px) scale(1.02); /* Efecto más pronunciado al pasar el ratón */
-      box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+      transform: scale(1.02); /* Efecto de zoom sutil al pasar el ratón */
+      box-shadow: none; /* Asegura que no haya sombra al pasar el ratón */
     }
 
     .grid-item img {
-      width: 100%;
-      height: 300px; /* Altura fija para las imágenes del collage en desktop */
-      object-fit: cover; /* Recorta la imagen para cubrir el área */
-      display: block;
+      width: 100%; /* La imagen ocupa el 100% del ancho de su celda */
+      height: auto; /* ¡Clave! La altura se ajusta automáticamente para mantener la proporción original */
+      object-fit: cover; /* Recorta la imagen para cubrir completamente la celda, sin dejar espacios vacíos */
+      display: block; /* Elimina cualquier espacio extra debajo de la imagen */
       transition: transform 0.4s ease;
     }
 
@@ -94,16 +93,13 @@
     /* Responsive para la galería */
     @media (max-width: 1024px) {
         .image-grid {
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        }
-        .grid-item img {
-            height: 250px;
+            grid-template-columns: repeat(2, 1fr); /* 2 columnas en tabletas */
         }
     }
 
     @media (max-width: 768px) {
       .gallery-fullscreen-container {
-        padding: 15px;
+        padding: 0; /* Eliminado el padding */
       }
       .close-button {
         font-size: 3rem;
@@ -111,11 +107,8 @@
         right: 20px;
       }
       .image-grid {
-        grid-template-columns: 1fr; /* Una columna en móviles */
-        gap: 10px;
-      }
-      .grid-item img {
-        height: 220px; /* Ajusta altura para móviles */
+        grid-template-columns: 1fr; /* Una columna en móviles para una mejor visualización */
+        gap: 0; /* Mantiene sin espacio */
       }
     }
 
@@ -124,9 +117,6 @@
             font-size: 2.5rem;
             top: 10px;
             right: 15px;
-        }
-        .grid-item img {
-            height: 180px;
         }
     }
 
@@ -142,32 +132,52 @@
       <a href="index.html" class="close-button" aria-label="Cerrar galería">&times;</a>
       
       <div class="image-grid">
-        <!-- Reemplaza estas rutas con las de tus imágenes reales en img/renders/ -->
+        <!-- Imágenes del collage, usando los nombres de archivo proporcionados por el usuario -->
         <div class="grid-item">
-          <img src="img/renders/render-moderna.jpg" onerror="this.src='https://placehold.co/1920x1080/2ea3a3/ffffff?text=Render+1'" alt="Render de Residencia Moderna">
+          <img src="img/renders/RENDER CLUSTER _1_5.jpg" onerror="this.src='https://placehold.co/1920x1080/2ea3a3/ffffff?text=Imagen+no+encontrada'" alt="Render 1">
         </div>
         
         <div class="grid-item">
-          <img src="img/renders/render-oficina.jpg" onerror="this.src='https://placehold.co/1920x1080/1f7a7a/ffffff?text=Render+2'" alt="Render de Interior de Oficina">
+          <img src="img/renders/FINAL_3.jpg" onerror="this.src='https://placehold.co/1920x1080/1f7a7a/ffffff?text=Imagen+no+encontrada'" alt="Render 2">
         </div>
 
         <div class="grid-item">
-          <img src="img/renders/render-comercial.jpg" onerror="this.src='https://placehold.co/1920x1080/2ea3a3/ffffff?text=Render+3'" alt="Render de Espacio Comercial">
+          <img src="img/renders/1000082981.jpg" onerror="this.src='https://placehold.co/1920x1080/2ea3a3/ffffff?text=Imagen+no+encontrada'" alt="Render 3">
         </div>
 
         <div class="grid-item">
-          <img src="img/renders/render-fachada.jpg" onerror="this.src='https://placehold.co/1920x1080/1f7a7a/ffffff?text=Render+4'" alt="Render de Fachada Detallada">
+          <img src="img/renders/1000063757.jpg" onerror="this.src='https://placehold.co/1920x1080/1f7a7a/ffffff?text=Imagen+no+encontrada'" alt="Render 4">
         </div>
 
         <div class="grid-item">
-          <img src="img/renders/render-paisajismo.jpg" onerror="this.src='https://placehold.co/1920x1080/2ea3a3/ffffff?text=Render+5'" alt="Render de Paisajismo y Entorno">
+          <img src="img/renders/1000063756.jpg" onerror="this.src='https://placehold.co/1920x1080/2ea3a3/ffffff?text=Imagen+no+encontrada'" alt="Render 5">
         </div>
         
         <div class="grid-item">
-          <img src="img/renders/render-interiores.jpg" onerror="this.src='https://placehold.co/1920x1080/1f7a7a/ffffff?text=Render+6'" alt="Render de Diseño de Interiores">
+          <img src="img/renders/1000031578.jpg" onerror="this.src='https://placehold.co/1920x1080/1f7a7a/ffffff?text=Imagen+no+encontrada'" alt="Render 6">
         </div>
 
-        <!-- Añade más <div class="grid-item"> con tus imágenes aquí -->
+        <div class="grid-item">
+          <img src="img/renders/1000031576.jpg" onerror="this.src='https://placehold.co/1920x1080/2ea3a3/ffffff?text=Imagen+no+encontrada'" alt="Render 7">
+        </div>
+
+        <div class="grid-item">
+          <img src="img/renders/55468.jpg" onerror="this.src='https://placehold.co/1920x1080/1f7a7a/ffffff?text=Imagen+no+encontrada'" alt="Render 8">
+        </div>
+
+        <div class="grid-item">
+          <img src="img/renders/55467.jpg" onerror="this.src='https://placehold.co/1920x1080/2ea3a3/ffffff?text=Imagen+no+encontrada'" alt="Render 9">
+        </div>
+
+        <div class="grid-item">
+          <img src="img/renders/4.1.jpg" onerror="this.src='https://placehold.co/1920x1080/1f7a7a/ffffff?text=Imagen+no+encontrada'" alt="Render 10">
+        </div>
+
+        <div class="grid-item">
+          <img src="img/renders/3.2.jpg" onerror="this.src='https://placehold.co/1920x1080/2ea3a3/ffffff?text=Imagen+no+encontrada'" alt="Render 11">
+        </div>
+
+        <!-- Añade más <div class="grid-item"> con tus imágenes aquí si tienes más -->
 
       </div>
     </div>

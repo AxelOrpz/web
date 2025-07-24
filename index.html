@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DiFlow - Expertos en implementación BIM. Modelado 3D, coordinación multidisciplinar y automatización de procesos con Revit y Autodesk Construction Cloud">
-  <title>DiFlow · Soluciones BIM Integrales</title>
+  <meta name="description" content="DiFlow - Experts in BIM implementation. 3D modeling, multidisciplinary coordination, and process automation with Revit and Autodesk Construction Cloud">
+  <title>DiFlow · Integral BIM Solutions</title>
   <meta property="og:image" content="img/og-image.jpg">
   
-  <!-- Preconexión y precarga de recursos -->
+  <!-- Preconnection and resource preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="style.css" as="style">
   
-    <!-- Favicon estándar -->
+    <!-- Standard Favicon -->
   <link rel="icon" type="image/png" href="img/DiFlow_Isotipo_120x120.png">
 
-  <!-- Versión para Apple/Safari -->
+  <!-- Version for Apple/Safari -->
   <link rel="apple-touch-icon" href="img/DiFlow_Isotipo_120x120.png">
 
-  <!-- Estilos principales -->
+  <!-- Main Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Contenido de tu sitio web -->
+  <!-- Your website content -->
   
-  <!-- Scripts al final del body -->
+  <!-- Scripts at the end of the body -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    // Inicialización de EmailJS
+    // EmailJS Initialization
     (function() {
       emailjs.init('wDNNgwyGYGJxjWlWU'); // User ID
     })();
   </script>
   <script src="app.js" defer></script>
 
-  <!-- Estilos internos (pueden moverse a style.css si se prefiere) -->
+  <!-- Internal Styles (can be moved to style.css if preferred) -->
   <style>
     :root {
       --primary-color: #2ea3a3;
@@ -95,7 +95,7 @@
       margin-top: 2rem;
     }
 
-    /* Sección Servicios */
+    /* Services Section */
     #features {
       padding: 5rem 1rem;
       background: #f8f9fa;
@@ -128,7 +128,7 @@
       display: block;
     }
 
-    /* Sobre Nosotros */
+    /* About Us */
     #about {
       padding: 5rem 1rem;
       display: flex;
@@ -160,7 +160,7 @@
       align-items: center;
     }
 
-    /* Formulario de Contacto */
+    /* Contact Form */
     #contact {
       padding: 5rem 1rem;
       background: var(--primary-color);
@@ -208,7 +208,7 @@
       opacity: 1;
     }
 
-    /* Animaciones */
+    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -233,89 +233,89 @@
 </head>
 <body>
   <header role="banner">
-    <nav aria-label="Navegación principal">
-      <!-- Agregar menú de navegación aquí -->
+    <nav aria-label="Main Navigation">
+      <!-- Add navigation menu here -->
     </nav>
     
     <div class="hero-content">
-      <img src="img/DiFlow_Isotipo_1920x1920_W.png" alt="Logo DiFlow" loading="lazy">
-      <h1>Transformando Proyectos con BIM</h1>
-      <p class="lead-text">Soluciones tecnológicas para la industria AEC</p>
+      <img src="img/DiFlow_Isotipo_1920x1920_W.png" alt="DiFlow Logo" loading="lazy">
+      <h1>Transforming Projects with BIM</h1>
+      <p class="lead-text">Technological solutions for the AEC industry</p>
       
       <div class="cta-container">
-        <a href="#contact" class="btn btn-primary">Contacto</a>
-        <a href="#features" class="btn btn-secondary">Servicios</a>
+        <a href="#contact" class="btn btn-primary">Contact</a>
+        <a href="#features" class="btn btn-secondary">Services</a>
       </div>
     </div>
   </header>
 
   <main>
-<section id="features" class="services" aria-labelledby="servicios-titulo">
+<section id="features" class="services" aria-labelledby="services-title">
   <div class="services-header">
-    <h2 id="servicios-titulo" class="section-title">Nuestros Servicios BIM</h2>
-    <p class="services-subtitle">Soluciones integrales para optimizar tu proceso de diseño y construcción</p>
+    <h2 id="services-title" class="section-title">Our BIM Services</h2>
+    <p class="services-subtitle">Integral solutions to optimize your design and construction process</p>
   </div>
 
   <div class="services-grid">
-    <!-- Modelado 3D Multidisciplinar -->
+    <!-- Multidisciplinary 3D Modeling -->
     <article class="service-card" data-bg-choices="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80,https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80">
       <div class="service-bg"></div>
       <div class="service-icon-wrapper">
-        <img src="img/3d-view.png" alt="Modelado 3D" class="service-icon">
+        <img src="img/3d-view.png" alt="3D Modeling" class="service-icon">
       </div>
       <div class="service-content">
-        <h3>Modelado 3D Multidisciplinar</h3>
-        <p>Desarrollo de modelos BIM precisos para arquitectura, estructuras e instalaciones.</p>
-        <a href="javascript:void(0);" class="btn-link" data-service-id="modelado3D">Más información</a>
+        <h3>Multidisciplinary 3D Modeling</h3>
+        <p>Development of precise BIM models for architecture, structures, and installations.</p>
+        <a href="javascript:void(0);" class="btn-link" data-service-id="modelado3D">More information</a>
       </div>
     </article>
-    <!-- Renderizado Fotorrealista -->
+    <!-- Photorealistic Rendering -->
     <article class="service-card" data-bg-choices="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1920,https://images.pexels.com/photos/373965/pexels-photo-373965.jpeg?auto=compress&cs=tinysrgb&w=1920">
       <div class="service-bg"></div>
       <div class="service-icon-wrapper">
-        <img src="img/3d.png" alt="Renderizado" class="service-icon">
+        <img src="img/3d.png" alt="Rendering" class="service-icon">
       </div>
       <div class="service-content">
-        <h3>Renderizado Fotorrealista</h3>
-        <p>Visualizaciones arquitectónicas de alta calidad con iluminación realista y entornos virtuales.</p>
-        <a href="javascript:void(0);" class="btn-link" data-service-id="renderizado">Ver ejemplos</a>
+        <h3>Photorealistic Rendering</h3>
+        <p>High-quality architectural visualizations with realistic lighting and virtual environments.</p>
+        <a href="javascript:void(0);" class="btn-link" data-service-id="renderizado">View examples</a>
       </div>
     </article>
-    <!-- Animaciones 4D -->
+    <!-- 4D Animations -->
     <article class="service-card" data-bg-choices="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80,https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80">
       <div class="service-bg"></div>
       <div class="service-icon-wrapper">
-        <img src="img/motion-graphics.png" alt="Animación 4D" class="service-icon">
+        <img src="img/motion-graphics.png" alt="4D Animation" class="service-icon">
       </div>
       <div class="service-content">
-        <h3>Animaciones 4D</h3>
-        <p>Simulaciones temporales de construcción con integración de cronogramas y gestión de recursos.</p>
-        <a href="javascript:void(0);" class="btn-link" data-service-id="animaciones4D">Ver demostración</a>
+        <h3>4D Animations</h3>
+        <p>Temporal construction simulations with schedule integration and resource management.</p>
+        <a href="javascript:void(0);" class="btn-link" data-service-id="animaciones4D">View demonstration</a>
       </div>
     </article>
-    <!-- Automatización de Procesos -->
+    <!-- Process Automation -->
     <article class="service-card" data-bg-choices="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80,https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80">
       <div class="service-bg"></div>
       <div class="service-icon-wrapper">
-        <img src="img/automation.png" alt="Automatización BIM" class="service-icon">
+        <img src="img/automation.png" alt="BIM Automation" class="service-icon">
       </div>
       <div class="service-content">
-        <h3>Automatización de Procesos</h3>
-        <p>Desarrollo de herramientas personalizadas para Revit utilizando Dynamo y C#.</p>
-        <!-- Este botón ahora mostrará la cinta de add-ins -->
-        <a href="javascript:void(0);" class="btn-link" data-service-id="automatizacion-ribbon">Ver casos de éxito</a>
+        <h3>Process Automation</h3>
+        <p>Development of customized tools for Revit using Dynamo and C#.</p>
+        <!-- This button will now show the add-ins ribbon -->
+        <a href="javascript:void(0);" class="btn-link" data-service-id="automatizacion-ribbon">View success stories</a>
       </div>
     </article>
-    <!-- Business Intelligence Avanzado -->
+    <!-- Advanced Business Intelligence -->
     <article class="service-card" data-bg-choices="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80,https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80">
       <div class="service-bg"></div>
       <div class="service-icon-wrapper">
         <img src="img/financial-technology.png" alt="Power BI" class="service-icon">
       </div>
       <div class="service-content">
-        <h3>Business Intelligence Avanzado</h3>
-        <p>Transformación de datos en insights accionables con dashboards interactivos.</p>
-        <a href="javascript:void(0);" class="btn-link" data-service-id="businessIntelligence">Ver demostración</a>
+        <h3>Advanced Business Intelligence</h3>
+        <p>Transforming data into actionable insights with interactive dashboards.</p>
+        <a href="javascript:void(0);" class="btn-link" data-service-id="businessIntelligence">View demonstration</a>
       </div>
     </article>
   </div>
@@ -332,60 +332,60 @@
   });
 </script>
 
-<!-- Nuevo panel para la cinta de add-ins de automatización -->
+<!-- New panel for the automation add-ins ribbon -->
 <section id="automationRibbonPanel" class="automation-ribbon-panel">
-  <h3>Nuestros Add-ins de Automatización</h3>
+  <h3>Our Automation Add-ins</h3>
   <div class="add-in-ribbon" id="addInRibbonContainer">
-    <!-- Las portadas de los add-ins se insertarán aquí dinámicamente -->
+    <!-- Add-in covers will be dynamically inserted here -->
   </div>
 </section>
 
-<!-- Sección para el detalle expandido de cualquier servicio o add-in -->
+<!-- Section for expanded service or add-in detail -->
 <section id="serviceExpandedDetail" class="service-expanded-detail">
   <div class="expanded-content-wrapper">
     <span class="close-expanded-detail-button">&times;</span>
     <h2 id="expanded-detail-title"></h2>
     <p id="expanded-detail-description"></p>
     
-    <!-- Contenedor del video de YouTube -->
+    <!-- YouTube video player container -->
     <div id="expanded-detail-video-player" class="video-container"></div>
 
-    <h3 id="expanded-detail-features-title" style="display: none;">Características Principales:</h3>
+    <h3 id="expanded-detail-features-title" style="display: none;">Main Features:</h3>
     <ul id="expanded-detail-features-list"></ul>
 
-    <h3 id="expanded-detail-benefits-title" style="display: none;">Beneficios Clave:</h3>
+    <h3 id="expanded-detail-benefits-title" style="display: none;">Key Benefits:</h3>
     <ul id="expanded-detail-benefits-list"></ul>
 
     <p id="expanded-detail-conclusion"></p>
     
-    <!-- Contenedor para el collage de imágenes -->
+    <!-- Image collage container -->
     <div id="expanded-detail-image-collage" class="image-collage-container"></div>
 
     <div class="expanded-detail-actions" id="expanded-detail-actions-container">
-      <!-- Los botones se insertarán aquí dinámicamente -->
+      <!-- Buttons will be dynamically inserted here -->
     </div>
   </div>
 </section>
 
 
-<section id="about" class="about" aria-labelledby="expertos-titulo">
+<section id="about" class="about" aria-labelledby="experts-title">
   <div class="about-overlay"></div>
   <div class="container about-content">
     <div class="about-header">
-      <h2 id="expertos-titulo" class="section-title">
-        <span class="title-decorator"></span>Expertos en Implementación BIM
+      <h2 id="experts-title" class="section-title">
+        <span class="title-decorator"></span>Experts in BIM Implementation
       </h2>
-      <p class="about-lead">Transformando la industria AEC desde hace 15 años con soluciones BIM integrales</p>
+      <p class="about-lead">Transforming the AEC industry for 15 years with integral BIM solutions</p>
     </div>
 
-    <ul class="about-list" aria-label="Ventajas de nuestro servicio BIM">
+    <ul class="about-list" aria-label="Advantages of our BIM service">
       <li class="about-item">
         <div class="item-container">
           <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
             <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
           </svg>
           <div class="item-content">
-            <h3 class="item-title">Certificación Profesional</h3>
+            <h3 class="item-title">Professional Certification</h3>
             <p class="item-text">Autodesk Certified Professionals</p>
           </div>
         </div>
@@ -397,8 +397,8 @@
             <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
           </svg>
           <div class="item-content">
-            <h3 class="item-title">Experiencia Comprobada</h3>
-            <p class="item-text">+200 proyectos BIM exitosos</p>
+            <h3 class="item-title">Proven Experience</h3>
+            <p class="item-text">+200 successful BIM projects</p>
           </div>
         </div>
       </li>
@@ -409,8 +409,8 @@
             <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
           </svg>
           <div class="item-content">
-            <h3 class="item-title">Soporte Integral</h3>
-            <p class="item-text">Asistencia técnica 24/7/365</p>
+            <h3 class="item-title">Comprehensive Support</h3>
+            <p class="item-text">24/7/365 Technical Assistance</p>
           </div>
         </div>
       </li>
@@ -419,26 +419,26 @@
 </section>
 
 
-    <section id="contact" aria-labelledby="contacto-titulo">
-      <h2 id="contacto-titulo" class="section-title">Contacto Rápido</h2>
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Quick Contact</h2>
       
       <form class="contact-form" id="contactForm">
         <div class="form-group">
-          <label for="name">Nombre Completo:</label>
+          <label for="name">Full Name:</label>
           <input type="text" id="name" name="name" required>
         </div>
         
         <div class="form-group">
-          <label for="email">Correo Electrónico:</label>
+          <label for="email">Email Address:</label>
           <input type="email" id="email" name="email" required>
         </div>
         
         <div class="form-group">
-          <label for="message">Mensaje:</label>
+          <label for="message">Message:</label>
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
         
-        <button type="submit" class="btn btn-tertiary">Enviar Consulta</button>
+        <button type="submit" class="btn btn-tertiary">Send Inquiry</button>
         
       </form>
     </section>
@@ -446,7 +446,7 @@
 
   <footer role="contentinfo">
     <div class="footer-content">
-      <img src="img/DiFlow_Imagotipo_1920x1920_W.png" alt="Logo DiFlow" width="120">
+      <img src="img/DiFlow_Imagotipo_1920x1920_W.png" alt="DiFlow Logo" width="120">
       
       <div class="social-links">
         <a href="https://www.linkedin.com/in/axel-oropeza/" 
@@ -457,7 +457,8 @@
         <a href="https://www.instagram.com/diflowmanagement/#" 
            aria-label="Instagram"><img 
            src="img/instagram_W.png" 
-           alt="Instagram" width="30"></a>
+           alt="Instagram" 
+           width="30"></a>
         <a href="https://www.facebook.com/Axel.Oropeza40/" 
            aria-label="Facebook"><img 
            src="img/facebook_W.png" 
@@ -465,7 +466,7 @@
            width="30"></a>
       </div>
       
-      <p>&copy; 2024 DiFlow. Todos los derechos reservados.</p>
+      <p>&copy; 2024 DiFlow. All rights reserved.</p>
     </div>
   </footer>
 
@@ -473,16 +474,16 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "serviceType": "Servicios BIM",
+  "serviceType": "BIM Services",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Servicios",
+    "name": "Services",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Modelado 3D Multidisciplinar"
+          "name": "Multidisciplinary 3D Modeling"
         }
       }
     ]
